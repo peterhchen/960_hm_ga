@@ -1,0 +1,119 @@
+{
+        "application_name": "hm_ga_20000_30000",
+        "optimization_objectives": ["ipc", "power", "area"],
+        "design_of_experiment": {
+            "doe_type": "random sampling",
+            "number_of_samples": 20000 
+        },
+
+        "optimization_iterations": 30000,
+        "log_file": "hm_ga_2022_0811_rs20000_oi30000.log",
+        "output_data_file": "hm_ga_2022_0811_rs20000_oi30000.csv",
+        "output_pareto_file": "hm_ga_pareto.csv",
+        "input_parameters": {
+                "cpu-type": {
+                        "parameter_type": "categorical",
+                        "values": ["DerivO3CPU", "TimingSimpleCPU"],
+                        "parameter_default": "DerivO3CPU"
+                },
+                "mem-type": {
+                        "parameter_type": "categorical",
+                        "values": ["DDR3_1600_8x8", "DDR3_2133_8x8", "LPDDR3_1600_1x32",
+                                "LPDDR4_3200_2x16", "HBM_1000_4H_1x128", "HBM_1000_4H_1x64",
+                                "WideIO_200_1x128", "DDR4_2400_8x8", "DDR4_2400_4x16",
+                                "DDR5_2400_16x4", "SimpleMemory", "LPDDR2_S4_1066_1x32"
+                        ],
+                        "parameter_default": "DDR3_1600_8x8"
+                },
+                "cacti_cache_size_bytes": {
+                        "parameter_type": "ordinal",
+                        "values": [16384, 32768, 65536],
+                        "parameter_default": 32768
+                },
+                "cacti_tlb_size_bytes": {
+                        "parameter_type": "ordinal",
+                        "values": [256, 512],
+                        "parameter_default": 256
+                },
+                "cacti_lq_size_bytes": {
+                        "parameter_type": "ordinal",
+                        "values": [128, 256, 512],
+                        "parameter_default": 128
+                },
+                "cacti_sq_size_bytes": {
+                        "parameter_type": "ordinal",
+                        "values": [64, 128, 256],
+                        "parameter_default": 64
+                },
+                "sys-clock": {
+                        "parameter_type": "categorical",
+                        "values": ["1GHz", "2GHz", "4GHz", "8GHz"],
+                        "parameter_default": "2GHz"
+                },
+                "num-cpus": {
+                        "parameter_type": "ordinal",
+                        "values": [1, 2, 4, 8, 16, 32, 64],
+                        "parameter_default": 1
+                },
+                "mem-size": {
+                        "parameter_type": "categorical",
+                        "values": ["4MB", "8MB", "16MB", "32MB", "64MB", "128MB", "256MB", "512MB", "1024MB", "2048MB"],
+                        "parameter_default": "256MB"
+                },
+                "num-l2caches": {
+                        "parameter_type": "ordinal",
+                        "values": ["1"],
+                        "parameter_default": "1"
+                },
+                "num-l3caches": {
+                        "parameter_type": "ordinal",
+                        "values": ["1"],
+                        "parameter_default": "1"
+                },
+                "l1i_size": {
+                        "parameter_type": "categorical",
+                        "values": ["4kB", "8kB", "16kB", "32kB", "64kB", "128kB", "256kB"],
+                        "parameter_default": "32kB"
+                },
+                "l1i_assoc": {
+                        "parameter_type": "ordinal",
+                        "values": [1, 2, 4, 8, 16, 32, 64],
+                        "parameter_default": 8
+                },
+                "l1d_size": {
+                        "parameter_type": "categorical",
+                        "values": ["4kB", "8kB", "16kB", "32kB", "64kB", "128kB", "256kB"],
+                        "parameter_default": "32kB"
+                },
+                "l1d_assoc": {
+                        "parameter_type": "ordinal",
+                        "values": [1, 2, 4, 8, 16, 32],
+                        "parameter_default": 8
+                },
+                "l2_size": {
+                        "parameter_type": "categorical",
+                        "values": ["32kB", "64kB", "128kB", "256kB", "512kB", "1024kB", "2048kB"],
+                        "parameter_default": "256kB"
+                },
+                "l2_assoc": {
+                        "parameter_type": "ordinal",
+                        "values": [1, 2, 4, 8, 16, 32],
+                        "parameter_default": 8
+                },
+                "l3_size": {
+                        "parameter_type": "categorical",
+                        "values": ["1024kB", "2048kB", "4096kB", "8192kB", "16384kB", "32768kB", "65536kB"],
+                        "parameter_default": "8192kB"
+                },
+                "l3_assoc": {
+                        "parameter_type": "ordinal",
+                        "values": [2, 4, 8, 16, 32, 64, 128],
+                        "parameter_default": 16
+                },
+                "cacheline_size": {
+                        "parameter_type": "ordinal",
+                        "values": [32, 64],
+                        "parameter_default": 64
+                }
+        }
+}
